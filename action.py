@@ -86,7 +86,7 @@ def load_kubeconfig(wrkdir):
         print('Bad kubeconfig')
         sys.exit(1)
     dst = wrkdir / ".kube_config.yml"
-    with dst.open("w") as f:
+    with dst.open("wb") as f:
         f.write(decoded)
     yield dst.resolve()
     dst.unlink()
